@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="pt_BR">
+<head>
+	<meta charset = "utf-8" />
+	<link rel="stylesheet" href="css/style.css" />
+	<style type="text/css">
+		form{
+			width: 300px;
+			margin: 0px auto;
+			padding: 10px 0px;
+		}
+		label{
+			display: block;
+			margin-bottom: 3px;
+		}
+		input[type=text]{
+			border: solid 1px #d2d3d4;
+			height: 22px;
+			line-height: 22px;
+			width: 100%;
+		}
+		input[type=submit]{
+			cursor: pointer;
+			padding: 5px 10px;
+			background: #000;
+			color: #fff;
+			font-size: 18px;
+		}
+		input[type=submit]:hover{
+			background: #333;
+		}
+		.row{
+			margin-bottom: 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="wmuf/wmufStyles/jquery-wmuf-1.0.css">
+	<script type="text/javascript" src="wmuf/wmufJs/jquery-wmuf-1.0.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#send_img').wmuf({
+				'base_url'          : 'http://localhost/my_libraries/jquery/wmuf/versionado/',
+				'delete_script'     : 'http://localhost/my_libraries/jquery/wmuf/versionado/delete.php',
+				'directory'         : 'http://localhost/my_libraries/jquery/wmuf/versionado/uploads/',
+				'file_extensions'   : 'jpg,gif,png',
+				'input_container'   : 'box_in',
+				'max_file_size'     : '2mb',
+				'resize'            : { 'w' : 200 },
+				'thumb'             : true,
+				'thumb_w'			:100,
+				'total_files'       : 3,
+				'upload_script'     : 'http://localhost/my_libraries/jquery/wmuf/versionado/upload.php',
+            	'zip_extensions'    : 'zip,rar'
+			});
+		});
+	</script>
+
+	<!--[if lt IE 9]>
+	     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>WM Upload File</title>
+</head>
+
+<body>
+	<header class='head' >
+		<h1>WM Upload File</h1>
+	</header><!-- header.head -->
+
+	<section class='main' >
+
+		<form action='' name='' method='post' enctype="multipart/form-data" >
+			<div class='row' >
+				<label for='nome' >Nome:</label>
+				<input type='text' name='nome' id='nome' />
+			</div>
+			<div class='row' >
+				<label for='email' >E-mail:</label>
+				<input type='text' name='email' id='email' />
+			</div>
+			<div class='row' >
+				<a href='#' id='send_img'>Enviar imagem</a>
+			</div>
+			<div id='box_in' ></div>
+			<div class='row' >
+				<input type='submit' value='Enviar' id='' />
+			</div>
+		</form>
+
+		<div style='padding:25px 0px; text-align:center' >
+			<a href='index.php' title='Ver documentação'>Ver documentação</a>
+		</div>
+
+	</section><!-- section.main -->
+
+	<footer class='foot' >
+		<p>
+			Desenvolvido por <strong>Welison Menezes</strong> || Contato: <em>welisonmenezes@gmail.com</em>
+		</p>
+	</footer><!-- footer.foot -->
+</body>
+</html>
